@@ -118,7 +118,11 @@ PUT /user/update/:id
 ```http
 DELETE /user/delete/:id
 ```
+---
+### Evidência de Coverage do Projeto
+![user_service](https://github.com/user-attachments/assets/dfeeb5b3-d799-4375-a664-3f953f48366e)
 
+---
 ## 📩 Contato
 Caso tenha dúvidas ou sugestões, entre em contato pelo repositório!
 
