@@ -32,7 +32,7 @@ user-service
 │   ├── interfaces  # Gateways para interação entre camadas
 │   ├── types  # Definições de tipos para o TypeScript
 │── .env  # Configuração de variáveis de ambiente
-│── docker-compose.yml  # Configuração do Docker
+│── Dockerfile_node  # Configuração do Docker
 │── package.json  # Dependências do projeto
 │── README.md  # Documentação do projeto
 ```
@@ -47,8 +47,7 @@ user-service
 
 ### 📌 **Pré-requisitos**
 Antes de rodar o projeto, garanta que você tenha instalado:
-- **Docker** e **Docker Compose**
-- **Node.js** (versão LTS recomendada)
+- **Docker**
 
 ### 🚀 **Passo 1: Configuração do .env**
 Crie um arquivo **.env** na raiz do projeto e adicione:
@@ -59,11 +58,12 @@ APP_URL=http://localhost:3001
 
 ### 🚀 **Passo 2: Subir o serviço com Docker**
 ```sh
-docker-compose up --build
+docker build -t user-service .
+docker run --env-file .env -p 3001:3001 user-service
 ```
 Isso iniciará o serviço junto com o banco de dados PostgreSQL.
 
-### 🚀 **Passo 3: Rodar localmente (sem Docker)**
+### 🚀 **Passo 3: Rodar localmente (sem Docker)
 Caso queira rodar manualmente sem Docker:
 ```sh
 npm install
